@@ -2,11 +2,12 @@ import numpy as np
 
 low = 6  # min hours per day
 high = 10  # max hours per day
-possible_values = np.arange(low, high, 0.25)
+step = 0.25
+possible_values = np.arange(low, high + step, step)
 n_months = 7
 vacation_days = [10, 0, 1, 13, 3, 4, 0]
 days_per_month = [23, 21, 21, 22, 23, 20, 23]
-tolerance_for_total_hours_of_whole_period = 0.25
+tolerance_for_total_hours_of_whole_period = 0
 
 while True:
     all_daily_working_hours = []
