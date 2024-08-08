@@ -3,7 +3,6 @@ from typing import List
 
 low = 6  # min hours per day
 high = 10  # max hours per day
-divisions_per_hour = 5
 possible_values: List = np.arange(low, high, 0.25).tolist()
 n_months = 7
 vacation_days = [10, 0, 1, 13, 3, 4, 0]
