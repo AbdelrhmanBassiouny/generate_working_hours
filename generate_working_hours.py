@@ -13,11 +13,14 @@ tolerance_for_total_hours_of_whole_period = 0
 debug = False  # to see if the total hours are close to 143*n_months and adjust the tolerance or low/high values.
 
 while True:
+
     all_daily_working_hours = []
     all_monthly_working_hours = []
-    total_hours_per_month = 0
+
     for m in range(n_months):
+
         per_month_daily_working_hours = []
+
         for i in range(days_per_month[m] - vacation_days[m]):
             hours_per_day_idx = np.random.randint(len(possible_values))
             hours_per_day = possible_values[hours_per_day_idx]
