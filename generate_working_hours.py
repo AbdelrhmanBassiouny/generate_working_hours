@@ -8,6 +8,7 @@ possible_values = np.arange(low, high + step, step)
 n_months = 7
 vacation_days = [10, 0, 1, 13, 3, 4, 0]
 days_per_month = [23, 21, 21, 22, 23, 20, 23]
+required_total_hours = 143 * n_months
 
 tolerance_for_total_hours_of_whole_period = 0
 debug = False  # to see if the total hours are close to 143*n_months and adjust the tolerance or low/high values.
@@ -30,10 +31,10 @@ while True:
         all_monthly_working_hours.append(per_month_daily_working_hours)
 
     if debug:
-        print(sum(all_daily_working_hours), "should be close to", 143*n_months,
-              "error:", sum(all_daily_working_hours) - 143*n_months)
+        print(sum(all_daily_working_hours), "should be close to", required_total_hours,
+              "error:", sum(all_daily_working_hours) - required_total_hours)
 
-    if np.isclose(sum(all_daily_working_hours), 143*n_months, atol=tolerance_for_total_hours_of_whole_period):
+    if np.isclose(sum(all_daily_working_hours), required_total_hours, atol=tolerance_for_total_hours_of_whole_period):
         break
 
 print(f"Total working hours = {sum(all_daily_working_hours)}")
