@@ -39,4 +39,3 @@ while True:
 print(f"Total working hours = {sum(all_daily_working_hours)}")
 for i, row in enumerate(all_monthly_working_hours):
     print(f"Month {i}: {row}, total: {sum(row)}")
-
